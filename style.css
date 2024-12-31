@@ -181,7 +181,7 @@ body {
 .first_year {
   /* margin-right: 100px; */
   position: absolute;
-  right: calc(50% - var(--first_year_width) / 2 + var(--number_4_width) / 2 + var(--gap_4_number));
+  right: calc(50% - var(--first_year_width) / 2 + var(--number_4_width) / 2 + var(--gap_4_number) / 2);
   top: 50%;
   transform: translateY(-50%);
   /* transform: translate(calc(((var(--first_year_width_minus) - var(--number_5_width) - var(--gap_4_number)) / 2)), -50%); */
@@ -417,7 +417,7 @@ canvas {
   body {
     transform: rotate(90deg);
     height: 100vw;
-    width: 90vh;
+    width: 95vh;
     transform-origin: 50vw;
   }
 
@@ -434,9 +434,13 @@ canvas {
     font-size: 60px;
   }
 
+  .first_year {
+    display: flex;
+  }
+
   .year>span {
     font-size: 100px;
-    letter-spacing: -10px;
+    letter-spacing: normal;
   }
 
   .balloon {
