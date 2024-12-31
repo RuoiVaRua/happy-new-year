@@ -1,0 +1,45 @@
+.stars {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	-webkit-animation: rotation 360s infinite linear;
+			animation: rotation 360s infinite linear;
+  }
+  .stars:after, .stars:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAGQAQMAAAC6caSPAAAABlBMVEVHcEz///+flKJDAAAAAXRSTlMAQObYZgAAAIVJREFUeAHt2SEOwkAQhtFJKuqKRRGOgKzgUMgKRI/G0ZDoacNkN/ue/zJ+/ugBcI+01/EEAGBc04FkP58AVFoi7VaSLAEAAPB/j0hbK678AADMkXbZG03mGA0AAKsP3JgAAGDa88knsuZ8Mp1M6gEAPFtNrtEjtkh7lyRb3/PAWpS0BPgC0PMMdOEjXqoAAAAASUVORK5CYII=");
+  }
+  .stars:after {
+	background-size: 100px;
+	opacity: 0.4;
+  }
+  .stars:before {
+	background-size: 200px;
+	opacity: 0.6;
+  }
+  
+  @-webkit-keyframes rotation {
+	0% {
+	  transform: rotate(0) scale(2);
+	}
+	100% {
+	  transform: rotate(360deg) scale(2);
+	}
+  }
+  
+  @keyframes rotation {
+	0% {
+	  transform: rotate(0) scale(2);
+	}
+	100% {
+	  transform: rotate(360deg) scale(2);
+	}
+  }
