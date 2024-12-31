@@ -10,11 +10,37 @@
   -webkit-transition: all 100ms ease-in;
   transition: all 100ms ease-in;
 }
+html {
+  overflow: hidden;
+}
 
 body {
   background-color: #1a1818;
   overflow: hidden;
   height: 100vh;
+}
+
+:root {
+  --first_year_width: 315px;
+  --first_year_width_minus: -315px;
+  --number_4_width: 111px;
+  --number_5_width: 103px;
+  --balloon_width: 100px;
+  --balloon_height: 120px;
+  --msg_margin_top: -200px;
+}
+
+@media screen and (orientation: portrait) {
+  /* css cho chế độ dọc */
+  :root {
+    --first_year_width: 154px;
+    --first_year_width_minus: -154px;
+    --number_4_width: 59px;
+    --number_5_width: 54px;  
+    --balloon_width: 50px;
+    --balloon_height: 60px;    
+    --msg_margin_top: -120px;
+  }
 }
 
 .msg {
@@ -38,7 +64,7 @@ body {
 
   100% {
     opacity: 1;
-    margin-top: -200px;
+    margin-top: var(--msg_margin_top);
   }
 }
 
@@ -106,9 +132,9 @@ body {
   color: #fff;
   position: absolute;
   top: 50%;
-  right: calc(50% - 315px / 2 - 111px / 2 - 10px);
+  right: calc(50% - var(--first_year_width) / 2 - var(--number_4_width) / 2 - 10px);
   transform: translateY(-50%);
-  /* transform: translate(calc(315px / 2 + 111px / 2 + 10px), -50%); */
+  /* transform: translate(calc(var(--first_year_width) / 2 + var(--number_4_width) / 2 + 10px), -50%); */
   animation: old_animation 2.5s ease-in-out 4s forwards;
   /* margin-left: -80px; */
 }
@@ -149,51 +175,53 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(calc(((-315px - 103px - 10px) / 2)), -50%);
+  transform: translate(calc(((var(--first_year_width_minus) - var(--number_5_width) - 10px) / 2)), -50%);
 }
 
 .new {
   position: absolute;
   /* right: -100px; */
-  right: calc(0% - 100px - 10px);
+  top: 50%;
+  right: calc(0% - var(--balloon_width) - 10px);
+  transform: translateY(-50%);
   animation: new_animation 5s ease-in-out 1.5s forwards;
 }
 
 @keyframes new_animation {
   0% {
-    /* right: -100px; */
-    right: calc(0% - 100px - 10px);
+    /* right: -var(--balloon_width); */
+    right: calc(0% - var(--balloon_width) - 10px);
   }
 
   40% {
     /* right: 600px; */
-    right: calc(50% - 315px / 2 - 103px / 2 - 5px - 111px - 10px);
+    right: calc(50% - var(--first_year_width) / 2 - var(--number_5_width) / 2 - 5px - var(--number_4_width) - 10px);
   }
 
   90% {
     /* right: 600px; */
-    right: calc(50% - 315px / 2 - 103px / 2 - 5px - 111px - 10px);
+    right: calc(50% - var(--first_year_width) / 2 - var(--number_5_width) / 2 - 5px - var(--number_4_width) - 10px);
   }
 
   100% {
     /* right: 720px; */
-    right: calc(50% - 315px / 2 - 103px / 2 - 5px);
+    right: calc(50% - var(--first_year_width) / 2 - var(--number_5_width) / 2 - 5px);
     /* right: 50%;
-    transform: translateX(calc(315px / 2 + 103px / 2 + 5px)); */
+    transform: translateX(calc(var(--first_year_width) / 2 + var(--number_5_width) / 2 + 5px)); */
     color: yellow;
   }
 }
 
 .balloon {
-  width: 100px;
-  height: 120px;
+  width: var(--balloon_width);
+  height: var(--balloon_height);
   border-radius: 50%;
   background-color: rgb(0, 47, 255);
   position: absolute;
   top: 50%;
-  right: calc(0% - 100px - 10px);
+  right: calc(0% - var(--balloon_width) - 10px);
   transform: translateY(calc(-250% + 15px));
-  /* right: -100px;
+  /* right: -var(--balloon_width);
   margin-top: -285px; */
   animation: balloon_animation 5s ease-in-out 1.5s forwards;
 }
@@ -201,12 +229,12 @@ body {
 .balloon::after {
   content: "";
   width: 4px;
-  height: 100px;
+  height: var(--balloon_width);
   background-color: #fff;
   position: absolute;
   left: 50%;
   margin-left: -2px;
-  bottom: -100px;
+  bottom: calc(-1 * var(--balloon_width));
 }
 
 .balloon::before {
@@ -222,20 +250,20 @@ body {
 
 @keyframes balloon_animation {
   0% {
-    right: calc(0% - 100px - 10px);
+    right: calc(0% - var(--balloon_width) - 10px);
   }
 
   40% {
-    right: calc(50% - 315px / 2 - 103px / 2 - 5px - 111px - 10px);
+    right: calc(50% - var(--first_year_width) / 2 - var(--number_5_width) / 2 - 5px - var(--number_4_width) - 10px);
   }
 
   50% {
-    right: calc(50% - 315px / 2 - 111px / 2 - 10px);
+    right: calc(50% - var(--first_year_width) / 2 - var(--number_4_width) / 2 - 10px);
     top: 50%;
   }
 
   100% {
-    right: calc(50% - 315px / 2 - 111px / 2 - 10px);
+    right: calc(50% - var(--first_year_width) / 2 - var(--number_4_width) / 2 - 10px);
     top: calc(-50vh - 50%);
   }
 }
@@ -390,5 +418,18 @@ canvas {
     width: 100%;
     text-align: center;
     transform: translateY(-50%);
+  }
+
+  .msg {
+    font-size: 60px;
+  }
+
+  .year>span {
+    font-size: 100px;
+    letter-spacing: -10px;
+  }
+
+  .balloon {
+    transform: translateY(calc(-250% + 5px));
   }
 }
