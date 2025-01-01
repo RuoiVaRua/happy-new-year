@@ -35,10 +35,10 @@ body {
 @media screen and (orientation: portrait) {
   /* css cho chế độ dọc */
   :root {
-    --first_year_width: 163px;
-    --first_year_width_minus: -163px;
-    --number_4_width: 60px;
-    --number_5_width: 56px;  
+    --first_year_width: 187px;
+    --first_year_width_minus: -187px;
+    --number_4_width: 68px;
+    --number_5_width: 64px;  
     --balloon_width: 50px;
     --balloon_height: 60px;    
     --msg_margin_top: -120px;
