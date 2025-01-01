@@ -35,10 +35,10 @@ body {
 @media screen and (orientation: portrait) {
   /* css cho chế độ dọc */
   :root {
-    --first_year_width: 200px;
-    --first_year_width_minus: -200px;
-    --number_4_width: 70px;
-    --number_5_width: 66px;  
+    --first_year_width: 163px;
+    --first_year_width_minus: -163px;
+    --number_4_width: 60px;
+    --number_5_width: 56px;  
     --balloon_width: 50px;
     --balloon_height: 60px;    
     --msg_margin_top: -120px;
@@ -422,7 +422,7 @@ canvas {
   }
 
   .first_year {
-    right: calc(50% -        var(--first_year_width) / 2 + var(--number_4_width) / 2 + var(--gap_4_number) + 10px);
+    right: calc(50% -        var(--first_year_width) / 2 + var(--number_4_width) / 2 + var(--gap_4_number) + 8px);
   }
 
   .year {
@@ -444,7 +444,7 @@ canvas {
 
   .year>span {
     font-size: 100px;
-    letter-spacing: 8px;
+    letter-spacing: 6px;
   }
 
   .balloon {
