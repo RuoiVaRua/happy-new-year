@@ -422,7 +422,7 @@ canvas {
   }
 
   .first_year {
-    right: calc(50% -        var(--first_year_width) / 2 + var(--number_4_width) / 2 + var(--gap_4_number) + 10px);
+    right: calc(50% -        var(--first_year_width) / 2 + var(--number_4_width) / 2 + var(--gap_4_number) + 8px);
   }
 
   .year {
@@ -444,7 +444,7 @@ canvas {
 
   .year>span {
     font-size: 100px;
-    letter-spacing: 10px;
+    letter-spacing: 8px;
   }
 
   .balloon {
