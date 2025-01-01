@@ -428,6 +428,7 @@ canvas {
     left: 50%;
     text-align: center;
     transform: translate(-50%, -50%);
+    display: flex;
   }
 
   .msg {
